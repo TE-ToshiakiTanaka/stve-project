@@ -21,3 +21,4 @@ class TestCase_Unit(StveTestCase):
     @classmethod
     def get_service(cls):
          cls.adb = cls.service["stvex.android"].get(cls.get("args.mobile"))
+         cls.browser = cls.service["stvex.browser"].get()
