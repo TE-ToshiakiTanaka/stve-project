@@ -3,7 +3,7 @@ import sys
 import argparse
 
 from stve.script import StveTestCase
-from stvep.utility import *
+from stvex.utility import *
 
 class TestCase_Unit(StveTestCase):
     def __init__(self, *args, **kwargs):
@@ -20,4 +20,4 @@ class TestCase_Unit(StveTestCase):
 
     @classmethod
     def get_service(cls):
-         cls.adb = cls.service["stve.android"].get(cls.get("args.mobile"))
+         cls.adb = cls.service["stvex.android"].get(cls.get("args.mobile"))

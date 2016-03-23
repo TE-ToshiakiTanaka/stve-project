@@ -1,8 +1,8 @@
 import os
 import sys
 
-from stvep.utility import LOG as L
-from stvep.script.testcase_base import TestCase_Unit
+from stvex.utility import LOG as L
+from stvex.script.testcase_base import TestCase_Unit
 
 class TestCase(TestCase_Unit):
     def __init__(self, *args, **kwargs):
