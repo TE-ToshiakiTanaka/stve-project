@@ -16,6 +16,11 @@ class TestCase_Unit(StveTestCase):
                             help='TestCase Name.')
         parser.add_argument('-m', action='store', dest='mobile',
                             help='Test Target Mobile Phone.')
+        parser.add_argument('-u', action='store', dest='username',
+                            help='Username (E-mail) from DMM.com.')
+        parser.add_argument('-p', action='store', dest='password',
+                            help='Password from DMM.com.')
+
         return parser
 
     @classmethod
