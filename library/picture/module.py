@@ -15,7 +15,7 @@ from stve.exception import *
 SHARPNESS = 2.0
 CONTRAST = 2.0
 
-PMC_THRESHOLD = 0.99
+PMC_THRESHOLD = 0.96
 
 class POINT(object):
     def __init__(self, x, y, width, height):
@@ -205,7 +205,7 @@ class Picture(object):
         img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
         template = cv2.imread(target, 0)
         w, h = template.shape[::-1]
-        res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
+        res = cv2.matchTemplate(img_gray, template, cv2.TM_CCOEFF_NORMED)
         loc = np.where( res >= PMC_THRESHOLD)
         result = None
         for pt in zip(*loc[::-1]):

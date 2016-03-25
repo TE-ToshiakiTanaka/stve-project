@@ -2,6 +2,7 @@ import os
 import sys
 
 from stvex.utility import *
+from stvex.utility import LOG as L
 from stvex.script import testcase_base
 
 class TestCase_Picture(testcase_base.TestCase_Unit):
@@ -17,21 +18,18 @@ class TestCase_Picture(testcase_base.TestCase_Unit):
             return self.picture.save(crop_pic, rename)
         except Exception as e:
             L.warning(e)
-            raise e
 
     def picture_is_pattern(self, reference, target):
         try:
             return self.picture.is_pattern(reference, target)
         except Exception as e:
             L.warning(e)
-            raise e
 
     def picture_find_pattern(self, reference, target):
         try:
             return self.picture.search_pattern(reference, target)
         except Exception as e:
             L.warning(e)
-            raise e
 
     def picture_get_rgb(self, filepath, point=""):
         try:
@@ -39,4 +37,3 @@ class TestCase_Picture(testcase_base.TestCase_Unit):
             return self.picture.get_rgb(pic, point)
         except Exception as e:
             L.warning(e)
-            raise e
