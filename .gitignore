@@ -62,7 +62,7 @@ target/
 .ipynb_checkpoints
 
 log
-tmp
+tmp/*_TMP.png
 report
 
 # APK

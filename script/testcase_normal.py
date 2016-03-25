@@ -35,6 +35,8 @@ class TestCase(testcase.TestCase_Base):
         return True
 
     def event_battle(self):
+        if self.enable_pattern("not_start*.png"):
+            return False
         while not self.enable("end.png"):
             if self.tap_timeout("event_start.png", timeout=0.5): time.sleep(5)
             if self.tap_timeout("auto.png", loop=2, timeout=0.5): time.sleep(5)

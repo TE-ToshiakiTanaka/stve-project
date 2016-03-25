@@ -21,12 +21,9 @@ class TestCase(testcase_normal.TestCase):
     def test_2_event(self):
         L.info("*** Event ***")
         self.assertTrue(self.event())
-
-    def test_3_event_battle(self):
-        L.info("*** Event Battle ***")
         self.assertTrue(self.event_battle())
 
-    def test_4_result(self):
+    def test_3_result(self):
         L.info("*** Result ***")
         self.assertTrue(self.result())
 
