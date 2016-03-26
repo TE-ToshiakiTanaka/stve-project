@@ -20,7 +20,38 @@ class TestCase(testcase.TestCase_Base):
             return False
         return self.tap_timeout("login.png")
 
+    def daily(self):
+        time.sleep(3)
+        self.tap_pattern("search*.png")
+        self.tap_pattern("daily*.png")
+        self.tap_pattern("route_*.png")
+        self.tap_timeout("start.png")
+        self.tap_timeout("skip.png")
+        if not self.enable_pattern("search_start*.png"):
+            return False
+        self.tap_pattern("search_start*.png")
+        if self.enable_pattern("not_start*.png"):
+            return False
+        return True
+
+    def battle(self):
+        if self.enable_pattern("not_start*.png"):
+            return False
+        while not self.enable("end.png"):
+            if self.enable_timeout("event_start.png", timeout=0.5):
+                self.search()
+                self.tap_timeout("event_start.png", timeout=0.5)
+                time.sleep(5)
+            if self.tap_timeout("auto.png", loop=2, timeout=0.5): time.sleep(5)
+            if self.tap_timeout("get.png", loop=2, timeout=0.5): time.sleep(5)
+        return True
+
+    def search(self):
+        if self.enable_pattern("character_*.png"):
+            self.click_timeout("item.png", loop=2, timeout=0.5)
+
     def event(self):
+        time.sleep(3)
         self.tap_pattern("search*.png")
         self.tap_pattern("event.png")
         self.tap_pattern("event_route*.png")
