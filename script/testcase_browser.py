@@ -10,7 +10,8 @@ class TestCase_Browser(testcase_base.TestCase_Unit):
     @classmethod
     def browser_start(cls, url):
         try:
-            return cls.browser.start(url)
+            driver = os.path.join(DRIVER_DIR, "chromedriver.exe")
+            return cls.browser.start(url, driver)
         except Exception as e:
             L.warning(e)
 

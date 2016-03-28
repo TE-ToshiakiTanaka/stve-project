@@ -19,7 +19,7 @@ class TestCase(testcase_normal.TestCase):
         self.assertTrue(self.login())
 
     def test_2_story(self):
-        L.info("*** Event ***")
+        L.info("*** Story ***")
         self.assertTrue(self.story())
         self.assertTrue(self.battle())
 

@@ -33,7 +33,7 @@ class TestCase_Unit(StveTestCase):
     @classmethod
     def get_service(cls):
          # cls.adb = cls.service["stvex.android"].get(cls.get("args.mobile"))
-         cls.browser = cls.service["stve.browser"].get()
+         cls.browser = cls.service["stve.browser"].get("Chrome")
          cls.picture = cls.service["stve.picture"].get()
 
     @classmethod
