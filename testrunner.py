@@ -3,8 +3,8 @@ import sys
 
 import stve
 
-if stve.__version__ < "0.1.1":
-    sys.exit("stve version over 0.1.1. : %s " % (stve.__version__))
+if stve.__version__ < "0.1.2":
+    sys.exit("stve version over 0.1.2. : %s " % (stve.__version__))
 
 from stve.application import StveTestRunner
 from stve.workspace import Workspace

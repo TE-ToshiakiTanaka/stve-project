@@ -21,7 +21,7 @@ class TestCase(testcase.TestCase_Base):
         return self.tap_timeout("login.png")
 
     def daily(self):
-        time.sleep(3)
+        time.sleep(5)
         self.tap_pattern("search*.png")
         self.tap_pattern("daily*.png")
         self.tap_pattern("route_*.png")
@@ -50,8 +50,20 @@ class TestCase(testcase.TestCase_Base):
         if self.enable_pattern("character_*.png"):
             self.tap_timeout("item.png", loop=2, timeout=0.5)
 
+    def story(self):
+        time.sleep(5)
+        self.tap_pattern("search*.png")
+        self.story_section_cource(self.get("args.section"), self.get("args.cource"))
+        self.tap_timeout("skip.png")
+        if not self.enable_pattern("search_start*.png"):
+            return False
+        self.tap_pattern("search_start*.png")
+        if self.enable_pattern("not_start*.png"):
+            return False
+        return True
+
     def event(self):
-        time.sleep(3)
+        time.sleep(5)
         self.tap_pattern("search*.png")
         self.tap_pattern("event.png")
         self.tap_pattern("event_route*.png")
@@ -88,6 +100,13 @@ class TestCase(testcase.TestCase_Base):
 
     def result(self):
         return self.enable_timeout("end.png")
+
+    def story_section_cource(self, section="1", cource="1"):
+        section_name = "section_%s*.png" % section
+        if self.tap_pattern(section_name): time.sleep(3)
+        cource_name = "cource_%s*.png" % cource
+        if self.tap_pattern(cource_name): time.sleep(3)
+        return self.tap_timeout("start.png")
 
     def event_cource(self, cource="1"):
         if int(cource) > 3:

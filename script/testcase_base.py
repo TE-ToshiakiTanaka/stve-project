@@ -24,8 +24,8 @@ class TestCase_Unit(StveTestCase):
         parser.add_argument('-p', action='store', dest='password',
                             help='Password from DMM.com.')
 
-        parser.add_argument('-s', action='store', dest='stage',
-                            help='Stage No.')
+        parser.add_argument('-s', action='store', dest='section',
+                            help='Section No.')
         parser.add_argument('-c', action='store', dest='cource',
                             help='Cource No.')
         return parser
@@ -33,8 +33,8 @@ class TestCase_Unit(StveTestCase):
     @classmethod
     def get_service(cls):
          # cls.adb = cls.service["stvex.android"].get(cls.get("args.mobile"))
-         cls.browser = cls.service["stvex.browser"].get()
-         cls.picture = cls.service["stvex.picture"].get()
+         cls.browser = cls.service["stve.browser"].get()
+         cls.picture = cls.service["stve.picture"].get()
 
     @classmethod
     def get_config(cls, conf=""):
