@@ -48,7 +48,7 @@ class TestCase(testcase.TestCase_Base):
 
     def search(self):
         if self.enable_pattern("character_*.png"):
-            self.click_timeout("item.png", loop=2, timeout=0.5)
+            self.tap_timeout("item.png", loop=2, timeout=0.5)
 
     def event(self):
         time.sleep(3)
