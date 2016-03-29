@@ -15,7 +15,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -62,41 +61,41 @@ target/
 .ipynb_checkpoints
 
 log
-tmp/*_TMP.png
+tmp
 report
 
 # APK
 .gradle
-library/android/apk/*/local.properties
-library/android/apk/*/gradle.properties
-library/android/apk/*/.idea/workspace.xml
-library/android/apk/*/.idea/libraries
-library/android/apk/*/.DS_Store
-library/android/apk/*/captures
-library/android/apk/*/.idea/workspace.xml
-library/android/apk/*/.idea/tasks.xml
-library/android/apk/*/.idea/libraries/
-library/android/apk/*/.gradle
+lib/android/apk/*/local.properties
+lib/android/apk/*/gradle.properties
+lib/android/apk/*/.idea/workspace.xml
+lib/android/apk/*/.idea/libraries
+lib/android/apk/*/.DS_Store
+lib/android/apk/*/captures
+lib/android/apk/*/.idea/workspace.xml
+lib/android/apk/*/.idea/tasks.xml
+lib/android/apk/*/.idea/libraries/
+lib/android/apk/*/.gradle
 
 # JAR
-library/*.ap_
-library/*.dex
-library/*.class
-# library/android/jar/*/bin/
-library/android/jar/*/gen/
-library/android/jar/*/local.properties
-library/android/jar/*/gradle.properties
-library/android/jar/*/.classpath
-library/android/jar/*/.project
-library/android/jar/*/proguard/
+lib/*.ap_
+lib/*.dex
+lib/*.class
+# lib/android/jar/*/bin/
+lib/android/jar/*/gen/
+lib/android/jar/*/local.properties
+lib/android/jar/*/gradle.properties
+lib/android/jar/*/.classpath
+lib/android/jar/*/.project
+lib/android/jar/*/proguard/
 *.iml
 *.ipr
 *.iws
 *.class
 *.dex
 *.dex.d
-library/android/jar/*/.idea/workspace.xml
-library/android/jar/*/.idea/tasks.xml
-library/android/jar/*/.idea/libraries/
-library/android/jar/*/.gradle
-library/android/jar/*/build
+lib/android/jar/*/.idea/workspace.xml
+lib/android/jar/*/.idea/tasks.xml
+lib/android/jar/*/.idea/libraries/
+lib/android/jar/*/.gradle
+lib/android/jar/*/build
