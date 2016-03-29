@@ -17,23 +17,12 @@ class TestCase_Unit(StveTestCase):
     def arg_parse(self, parser):
         parser.add_argument(action='store', dest="testcase",
                             help='TestCase Name.')
-        parser.add_argument('-m', action='store', dest='mobile',
-                            help='Test Target Mobile Phone.')
-        parser.add_argument('-u', action='store', dest='username',
-                            help='Username (E-mail) from DMM.com.')
-        parser.add_argument('-p', action='store', dest='password',
-                            help='Password from DMM.com.')
-
-        parser.add_argument('-s', action='store', dest='section',
-                            help='Section No.')
-        parser.add_argument('-c', action='store', dest='cource',
-                            help='Cource No.')
         return parser
 
     @classmethod
     def get_service(cls):
          # cls.adb = cls.service["stvex.android"].get(cls.get("args.mobile"))
-         cls.browser = cls.service["stve.browser"].get("Chrome")
+         cls.browser = cls.service["stve.browser"].get()
          cls.picture = cls.service["stve.picture"].get()
 
     @classmethod
