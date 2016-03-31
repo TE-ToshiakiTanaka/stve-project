@@ -13,6 +13,7 @@ BIN_DIR = os.path.normpath(os.path.join(WORK_DIR, "bin"))
 DRIVER_DIR = os.path.normpath(os.path.join(BIN_DIR, "chromedriver"))
 
 LOG = log.Log("Project.STVE")
+if not os.path.exists(LOG_DIR): os.mkdir(LOG_DIR)
 logfile = os.path.join(LOG_DIR, "system.log")
 if not os.path.exists(logfile):
     with open(logfile, 'a') as f:
