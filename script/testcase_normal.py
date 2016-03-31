@@ -35,8 +35,9 @@ class TestCase(testcase.TestCase_Base):
         return True
 
     def daily(self):
-        time.sleep(5)
-        self.tap_timeout("search.png")
+        self.tap_pattern("search*.png")
+        time.sleep(10)
+        self.tap_pattern("search*.png")
         self.tap_pattern("daily*.png")
         self.tap_pattern("route_*.png")
         self.tap_timeout("start.png")
