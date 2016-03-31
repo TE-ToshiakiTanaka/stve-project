@@ -16,9 +16,22 @@ class TestCase(testcase.TestCase_Base):
         self.browser_start(self.get("dmm.url")); time.sleep(5)
         self.browser_login(self.get("args.username"), self.get("args.password")); time.sleep(10)
         if self.tap_timeout("bad.png", timeout=1): time.sleep(3)
-        if not self.enable_timeout("login.png", loop=2, timeout=1):
+        if not self.enable_timeout("login.png", loop=2):
             return False
         return self.tap_timeout("login.png")
+
+    def special(self):
+        time.sleep(5)
+        self.tap_pattern("search*.png")
+        self.tap_pattern("special*.png")
+        self.special_cource(self.get("args.cource"))
+        self.tap_timeout("skip.png")
+        if not self.enable_pattern("search_start*.png"):
+            return False
+        self.tap_pattern("search_start*.png")
+        if self.enable_pattern("not_start*.png"):
+            return False
+        return True
 
     def daily(self):
         time.sleep(5)
@@ -104,6 +117,11 @@ class TestCase(testcase.TestCase_Base):
     def story_section_cource(self, section="1", cource="1"):
         section_name = "section_%s*.png" % section
         if self.tap_pattern(section_name): time.sleep(3)
+        cource_name = "cource_%s*.png" % cource
+        if self.tap_pattern(cource_name): time.sleep(3)
+        return self.tap_timeout("start.png")
+
+    def special_cource(self, cource="1"):
         cource_name = "cource_%s*.png" % cource
         if self.tap_pattern(cource_name): time.sleep(3)
         return self.tap_timeout("start.png")
