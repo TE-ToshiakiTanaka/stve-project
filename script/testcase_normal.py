@@ -21,7 +21,7 @@ class TestCase(testcase.TestCase_Base):
         return self.tap_timeout("login.png")
 
     def special(self):
-        time.sleep(5)
+        time.sleep(40)
         self.tap_pattern("search*.png")
         self.tap_pattern("special*.png")
         self.special_cource(self.get("args.cource"))
