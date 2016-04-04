@@ -66,8 +66,9 @@ class TestCase(testcase.TestCase_Base):
             self.tap_timeout("item.png", loop=2, timeout=0.5)
 
     def story(self):
-        time.sleep(5)
-        self.tap_timeout("search.png")
+        self.tap_pattern("search*.png")
+        time.sleep(10)
+        self.tap_pattern("search*.png")
         self.story_section_cource(self.get("args.section"), self.get("args.cource"))
         self.tap_timeout("skip.png")
         if not self.enable_pattern("search_start*.png"):
