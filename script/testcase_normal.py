@@ -79,8 +79,9 @@ class TestCase(testcase.TestCase_Base):
         return True
 
     def event(self):
-        time.sleep(5)
-        self.tap_timeout("search.png")
+        self.tap_pattern("search*.png")
+        time.sleep(10)
+        self.tap_pattern("search*.png")
         self.tap_pattern("event.png")
         self.tap_pattern("event_route*.png")
         self.tap_pattern("event_stage*.png")
