@@ -98,7 +98,10 @@ class TestCase(testcase.TestCase_Base):
         if self.enable_pattern("not_start*.png"):
             return False
         while not self.enable("end.png"):
-            if self.tap_timeout("event_start.png", timeout=0.5): time.sleep(5)
+            if self.enable_timeout("event_start.png", timeout=0.5):
+                self.search()
+                self.tap_timeout("event_start.png", timeout=0.5)
+                time.sleep(5)
             if self.tap_timeout("auto.png", loop=2, timeout=0.5): time.sleep(5)
             if self.tap_timeout("get.png", loop=2, timeout=0.5): time.sleep(5)
             if self.tap_timeout("raid_start.png", loop=2, timeout=0.5):
