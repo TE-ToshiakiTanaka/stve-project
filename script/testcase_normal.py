@@ -111,8 +111,10 @@ class TestCase(testcase.TestCase_Base):
                     if self.tap_timeout("raid_call.png", loop=2, timeout=0.5): time.sleep(5)
                     if self.tap_timeout("raid_close.png", loop=2, timeout=0.5):
                         break
-                    if self.tap_timeout("event_start.png", timeout=0.5):
-                        break
+                    if self.enable_timeout("event_start.png", timeout=0.5):
+                        self.search()
+                        self.tap_timeout("event_start.png", timeout=0.5)
+                        time.sleep(5)
                     self.tap_timeout("raid_start.png", loop=2, timeout=0.5)
                 time.sleep(5)
                 if self.tap_timeout("get.png", loop=2, timeout=0.5): time.sleep(5)
