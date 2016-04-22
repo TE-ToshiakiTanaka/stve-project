@@ -79,10 +79,7 @@ class TestCase(testcase.TestCase_Base):
         return True
 
     def event(self):
-        self.tap_pattern("search*.png")
-        time.sleep(10)
-        self.tap_pattern("search*.png")
-        self.tap_pattern("event.png")
+        self.tap_pattern("event_entry*.png")
         self.tap_pattern("event_route*.png")
         self.tap_pattern("event_stage*.png")
         self.event_cource(self.get("args.cource"))
@@ -106,6 +103,8 @@ class TestCase(testcase.TestCase_Base):
             if self.tap_timeout("get.png", loop=2, timeout=0.5): time.sleep(5)
             if self.tap_timeout("raid_start.png", loop=2, timeout=0.5):
                 while not self.enable("get.png"):
+                    if self.enable_timeout("end.png", loop=2, timeout=0.5):
+                        break
                     if self.tap_timeout("auto.png", loop=2, timeout=0.5): time.sleep(30)
                     self.tap_base(620, 340); time.sleep(5)
                     if self.tap_timeout("raid_call.png", loop=2, timeout=0.5): time.sleep(5)
