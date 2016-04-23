@@ -16,9 +16,9 @@ class TestCase(testcase.TestCase_Base):
         self.browser_start(self.get("dmm.url")); time.sleep(5)
         self.browser_login(self.get("args.username"), self.get("args.password")); time.sleep(10)
         if self.tap_timeout("bad.png", timeout=1): time.sleep(3)
-        if not self.enable_timeout("login.png", loop=2):
+        if not self.tap_pattern("login*.png"):
             return False
-        return self.tap_timeout("login.png")
+        return True
 
     def special(self):
         self.tap_pattern("search*.png")
