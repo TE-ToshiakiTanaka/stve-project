@@ -26,7 +26,7 @@ class TestCase(testcase.TestCase_Base):
         self.tap_pattern("search*.png")
         self.tap_pattern("special*.png")
         self.special_cource(self.get("args.cource"))
-        self.tap_timeout("skip.png")
+        self.tap_pattern("skip*.png")
         if not self.enable_pattern("search_start*.png"):
             return False
         self.tap_pattern("search_start*.png")
@@ -41,7 +41,7 @@ class TestCase(testcase.TestCase_Base):
         self.tap_pattern("daily*.png")
         self.tap_pattern("route_*.png")
         self.tap_timeout("start.png")
-        self.tap_timeout("skip.png")
+        self.tap_pattern("skip*.png")
         if not self.enable_pattern("search_start*.png"):
             return False
         self.tap_pattern("search_start*.png")
@@ -70,7 +70,7 @@ class TestCase(testcase.TestCase_Base):
         time.sleep(10)
         self.tap_pattern("search*.png")
         self.story_section_cource(self.get("args.section"), self.get("args.cource"))
-        self.tap_timeout("skip.png")
+        self.tap_pattern("skip*.png")
         if not self.enable_pattern("search_start*.png"):
             return False
         self.tap_pattern("search_start*.png")
@@ -83,7 +83,7 @@ class TestCase(testcase.TestCase_Base):
         self.tap_pattern("event_route*.png")
         self.tap_pattern("event_stage*.png")
         self.event_cource(self.get("args.cource"))
-        self.tap_timeout("skip.png")
+        self.tap_pattern("skip*.png")
         if not self.enable_pattern("search_start*.png"):
             return False
         self.tap_pattern("search_start*.png")
