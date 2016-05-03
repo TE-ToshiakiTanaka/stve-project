@@ -106,6 +106,8 @@ class TestCase(testcase.TestCase_Base):
                     if self.enable_timeout("end.png", loop=2, timeout=0.5):
                         break
                     if self.tap_timeout("auto.png", loop=2, timeout=0.5): time.sleep(30)
+                    if self.enable_timeout("end.png", loop=2, timeout=0.5):
+                        break
                     self.tap_base(620, 340); time.sleep(5)
                     if self.tap_timeout("raid_call.png", loop=2, timeout=0.5): time.sleep(5)
                     if self.tap_timeout("raid_close.png", loop=2, timeout=0.5):
