@@ -110,6 +110,7 @@ class TestCase(testcase.TestCase_Base):
                         break
                     self.tap_base(620, 340); time.sleep(5)
                     if self.tap_timeout("raid_call.png", loop=2, timeout=0.5): time.sleep(5)
+                    if self.tap_timeout("raid_call_help.png", loop=2, timeout=0.5): time.sleep(5)
                     if self.tap_timeout("raid_close.png", loop=2, timeout=0.5):
                         break
                     if self.enable_timeout("event_start.png", timeout=0.5):
