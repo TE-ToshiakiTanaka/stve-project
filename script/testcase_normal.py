@@ -79,6 +79,7 @@ class TestCase(testcase.TestCase_Base):
         return True
 
     def event(self):
+        time.sleep(10)
         self.tap_pattern("event_entry*.png"); time.sleep(10)
         self.tap_pattern("event_route*.png"); time.sleep(10)
         self.tap_pattern("event_stage*.png"); time.sleep(10)
