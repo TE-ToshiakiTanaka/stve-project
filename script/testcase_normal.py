@@ -14,7 +14,7 @@ class TestCase(testcase.TestCase_Base):
 
     def login(self):
         self.browser_start(self.get("dmm.url")); time.sleep(5)
-        self.browser_login(self.get("args.username"), self.get("args.password")); time.sleep(10)
+        self.browser_login(self.get("args.username"), self.get("args.password")); time.sleep(30)
         if self.tap_timeout("bad.png", timeout=1): time.sleep(3)
         if not self.tap_pattern("login*.png"):
             return False
@@ -79,11 +79,11 @@ class TestCase(testcase.TestCase_Base):
         return True
 
     def event(self):
-        self.tap_pattern("event_entry*.png")
-        self.tap_pattern("event_route*.png")
-        self.tap_pattern("event_stage*.png")
-        self.event_cource(self.get("args.cource"))
-        self.tap_pattern("skip*.png")
+        self.tap_pattern("event_entry*.png"); time.sleep(10)
+        self.tap_pattern("event_route*.png"); time.sleep(10)
+        self.tap_pattern("event_stage*.png"); time.sleep(10)
+        self.event_cource(self.get("args.cource")); time.sleep(10)
+        self.tap_pattern("skip*.png"); time.sleep(10)
         if not self.enable_pattern("search_start*.png"):
             return False
         self.tap_pattern("search_start*.png")
