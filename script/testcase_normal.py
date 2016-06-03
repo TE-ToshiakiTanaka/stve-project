@@ -24,6 +24,7 @@ class TestCase(testcase.TestCase_Base):
         self.tap_pattern("search*.png")
         time.sleep(10)
         self.tap_pattern("search*.png")
+        time.sleep(10)
         self.tap_pattern("special*.png")
         self.special_cource(self.get("args.cource"))
         self.tap_pattern("skip*.png")
