@@ -105,6 +105,8 @@ class TestCase(testcase.TestCase_Base):
             if self.tap_timeout("get.png", loop=2, timeout=0.5): time.sleep(5)
             if self.tap_timeout("raid_start.png", loop=2, timeout=0.5):
                 while not self.enable("get.png"):
+                    if self.enable_pattern("event_route*.png"):
+                        break
                     if self.enable_timeout("end.png", loop=2, timeout=0.5):
                         break
                     if self.tap_timeout("auto.png", loop=2, timeout=0.5): time.sleep(30)
