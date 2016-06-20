@@ -83,6 +83,7 @@ class TestCase(testcase.TestCase_Base):
         time.sleep(5)
         self.tap_pattern("event_entry*.png"); time.sleep(10)
         self.tap_pattern("event_route*.png"); time.sleep(10)
+        self.tap(500, 425); time.sleep(10)
         self.tap_pattern("event_stage*.png"); time.sleep(10)
         self.event_cource(self.get("args.cource")); time.sleep(10)
         self.tap_pattern("skip*.png"); time.sleep(10)
